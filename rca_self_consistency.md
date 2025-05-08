@@ -13,6 +13,20 @@ This is your "third line of defense" - a systematic approach for complex error s
 
 ---
 
+## When to Escalate to RCA
+
+Before attempting any new fix or action, perform a self-check:
+
+- **Have I already tried this fix or a very similar one?**
+- **Am I seeing the same error or failure after two or more attempts?**
+- **Have I made any measurable progress since the last step?**
+
+If you answer "yes" to any of the above, or if you have attempted two or more fixes without resolving the issue, **stop attempting further quick fixes and escalate to the full RCA protocol below.**
+
+> **Note:** Recognizing when you are "stuck" is critical. Looping on the same or similar fixes without progress is a signal to switch from quick fixes to structured root cause analysis.
+
+---
+
 ## 1. Prompt Architecture Overview (Meta-directive)
 
 > You are a structured reasoning agent. Your goal is to identify the most probable root cause of a persistent failure using top-down, component-based analysis, while avoiding destructive or premature changes. Your thinking should be:
