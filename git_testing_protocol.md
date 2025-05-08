@@ -1,41 +1,44 @@
-# Git Management & Tiered Testing Protocol
-
-A structured approach to using Git branches and test coverage in iterative, agentic or collaborative development environments.
+# Git Testing Protocol
 
 ## Branch Strategy
-- `main`: production-ready code
-- `main/feature-name`: feature branches directly off main
-- Use `/` only when a feature implementation is large enough to have its own sub-features
 
-## Branch Naming
-- Keep it simple: `main/feature-name`
-- Only use additional levels if feature has significant sub-components:
-  ```
-  main/feature-name
-  main/feature-name/sub-feature
-  ```
-- Avoid unnecessary nesting
+Use a simple, flat structure:
+- `main/` - Production-ready code
+- `main/feature-name` - Feature branches
+- `main/bugfix-name` - Bug fix branches
+- `main/refactor-name` - Refactoring branches
 
-## Tiered Testing
-- Feature: modified units + dependencies
-- Main: full unit + integration + regression + security
+## Testing Tiers
 
-## Example
-```bash
-# Simple feature
-git checkout -b main/your-feature
-pytest tests/unit/test_feature.py
-git push origin main/your-feature
+1. **Quick Tests** (run on every commit)
+   - Linting
+   - Basic unit tests
+   - Type checking
 
-# Feature with sub-components
-git checkout -b main/your-feature
-# ... work on main feature ...
-git checkout -b main/your-feature/sub-component
-# ... work on sub-component ...
-```
+2. **Integration Tests** (run before merge)
+   - Component integration
+   - API endpoints
+   - Database operations
+
+3. **System Tests** (run on main)
+   - End-to-end flows
+   - Performance benchmarks
+   - Security scans
+
+## Workflow
+
+1. Create branch from main: `git checkout -b main/feature-name`
+2. Make changes and commit
+3. Run quick tests locally
+4. Push and create PR
+5. CI runs integration tests
+6. Review and merge to main
+7. System tests run on main
 
 ## Best Practices
-1. Start with `main/feature-name`
-2. Only create sub-branches if the feature implementation is large enough to warrant it
-3. Keep the structure as flat as possible
-4. Merge back to main when feature is complete
+
+- Keep branches short-lived (1-2 days max)
+- One logical change per branch
+- Always start from latest main
+- Delete branches after merge
+- Use descriptive branch names
