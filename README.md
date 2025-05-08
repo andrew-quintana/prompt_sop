@@ -20,6 +20,18 @@ When encountering errors, follow this progressive approach:
 2. **Brief Step Back**: If quick fix fails, undo to get back to the failure state then take a moment to reconsider and try another simple approach and attempt if confident
 3. **Full RCA**: If simpler approaches don't work, use the systematic RCA protocol in `rca_self_consistency.md`
 
+## For AI Agents
+
+When using these SOPs as context:
+1. Always start with the simplest possible fix
+2. Only escalate to the next level if the current approach fails
+3. When using RCA:
+   - Load the full `rca_self_consistency.md` context
+   - Follow the hierarchical steps exactly
+   - Document each step and its outcome
+   - Ensure each change is reversible
+4. If at any point you're unsure, pause and ask for human guidance
+
 ## Recommended Load Order (if using in agents)
 
 1. `coding_agent_prompt_schema.md`
