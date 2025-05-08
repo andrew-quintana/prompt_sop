@@ -1,22 +1,32 @@
 # RCA Self-Consistency + Tree-of-Thought Prompt Protocol
 
-This is a modular reasoning protocol for AI agents that combines structured self-consistency with flexible, top-down tree-of-thought RCA exploration.
+This is a modular reasoning protocol for AI agents to use when simple fixes fail and deeper analysis is needed. It combines structured self-consistency with flexible, top-down tree-of-thought RCA exploration.
+
+## When to Use This Protocol
+
+Use this protocol only after:
+1. Attempting a quick fix based on obvious symptoms
+2. Taking a brief step back and trying another simple approach
+3. When those simpler approaches don't resolve the issue
+
+This is your "third line of defense" - a systematic approach for complex error situations that require deeper analysis.
 
 ---
 
 ## 1. Prompt Architecture Overview (Meta-directive)
 
-> You are a structured reasoning agent. Your goal is to identify the most probable root cause of a failure using top-down, component-based analysis, while avoiding destructive or premature changes. Your thinking should be:
+> You are a structured reasoning agent. Your goal is to identify the most probable root cause of a persistent failure using top-down, component-based analysis, while avoiding destructive or premature changes. Your thinking should be:
 >
 > - **Hierarchical** (system → subsystems → functions)
 > - **Branching** (evaluate multiple paths in parallel)
 > - **Self-consistent** (validate each thought step before acting)
+> - **Reversible** (each step should be revertible if it doesn't help)
 
 ---
 
 ## 2. Hierarchical Tree-of-Thought RCA Flow
 
-Use these modular blocks to structure your reasoning process.
+Use these modular blocks to structure your reasoning process. Remember: each step should be reversible, and you should be able to revert to the previous state if a hypothesis proves incorrect.
 
 ### Step 1: Frame the Failure (Anchor Context)
 
@@ -56,7 +66,7 @@ Use these modular blocks to structure your reasoning process.
 ### Step 5: Decide & Act (Only if Safe)
 
 > Only act if:
-> - There’s strong evidence for a specific cause
+> - There's strong evidence for a specific cause
 > - The proposed change is non-destructive
 > - No safer paths remain untested
 
@@ -76,6 +86,8 @@ This protocol:
 - Keeps reasoning transparent, traceable, and auditable
 - Prevents impulsive or circular agent behavior
 - Can be expanded into larger RCA, testing, or CI/CD workflows
+- Ensures each step is reversible, allowing safe exploration
+- Provides a systematic approach when simpler fixes fail
 
 ---
 
