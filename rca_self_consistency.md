@@ -60,6 +60,8 @@ Use these modular blocks to structure your reasoning process. Remember: each ste
 > For each test, answer:
 > - What did it confirm or rule out?
 > - Does this shift your top hypotheses?
+> - **Are the tests themselves written correctly and sufficient for this failure?**
+>   - If you suspect the tests may be incorrect, incomplete, or misleading, pause and ask for permission before making any changes to the tests, as they may have been intentionally engineered this way.
 
 ---
 
