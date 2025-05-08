@@ -1,4 +1,4 @@
-# 📁 prompt_sops/
+# 📁 prompt_sop/
 
 This folder contains modular Standard Operating Procedures (SOPs) used to guide agent reasoning, debugging, testing, and code management in the Vibe Coding environment.
 
