@@ -32,6 +32,15 @@ When using these SOPs as context:
    - Ensure each change is reversible
 4. If at any point you're unsure, pause and ask for human guidance
 
+## For Cursor Users
+
+When using this repository as context in Cursor:
+1. These instructions are automatically loaded and updated when the repository is used as context
+2. No need to explicitly check for updates - Cursor will use the latest version
+3. If you want to ensure you're using the latest version, you can:
+   - Pull the latest changes from the repository
+   - Or re-add the repository as context in Cursor
+
 ## Recommended Load Order (if using in agents)
 
 1. `coding_agent_prompt_schema.md`
